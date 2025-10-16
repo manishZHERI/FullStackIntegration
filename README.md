@@ -1,36 +1,57 @@
-# wrappy
+Getting Started with Create React App
+This project was bootstrapped with Create React App.
 
-Callback wrapping utility
+Available Scripts
+In the project directory, you can run:
 
-## USAGE
+npm start
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in your browser.
 
-```javascript
-var wrappy = require("wrappy")
+The page will reload when you make changes.
+You may also see any lint errors in the console.
 
-// var wrapper = wrappy(wrapperFunction)
+npm test
+Launches the test runner in the interactive watch mode.
+See the section about running tests for more information.
 
-// make sure a cb is called only once
-// See also: http://npm.im/once for this specific use case
-var once = wrappy(function (cb) {
-  var called = false
-  return function () {
-    if (called) return
-    called = true
-    return cb.apply(this, arguments)
-  }
-})
+npm run build
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-function printBoo () {
-  console.log('boo')
-}
-// has some rando property
-printBoo.iAmBooPrinter = true
+The build is minified and the filenames include the hashes.
+Your app is ready to be deployed!
 
-var onlyPrintOnce = once(printBoo)
+See the section about deployment for more information.
 
-onlyPrintOnce() // prints 'boo'
-onlyPrintOnce() // does nothing
+npm run eject
+Note: this is a one-way operation. Once you eject, you can't go back!
 
-// random property is retained!
-assert.equal(onlyPrintOnce.iAmBooPrinter, true)
-```
+If you aren't satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except eject will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+Learn More
+You can learn more in the Create React App documentation.
+
+To learn React, check out the React documentation.
+
+Code Splitting
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+Analyzing the Bundle Size
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+Making a Progressive Web App
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+Advanced Configuration
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+Deployment
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+npm run build fails to minify
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
